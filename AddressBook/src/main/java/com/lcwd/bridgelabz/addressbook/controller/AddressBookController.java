@@ -1,5 +1,7 @@
 package com.lcwd.bridgelabz.addressbook.controller;
 
+import com.lcwd.bridgelabz.addressbook.service.IAddressBookService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -7,7 +9,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/address")
 public class AddressBookController {
 
-   @GetMapping("/api/test")
+    @Autowired
+    private IAddressBookService addressBookService;
+
+
+    @GetMapping("/api/test")
     public ResponseEntity<String> test(){
        return ResponseEntity.ok("Hello From Address Book Controller");
    }
